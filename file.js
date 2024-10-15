@@ -61,7 +61,12 @@
        Scrivi una funzione che aggiunga un paragrafo al primo div
     */
 
-      const addParagraph = function () {}
+      const addParagraph = function () {
+          const p = document.querySelector("p");
+          let newAddPar = document.createElement("p");}
+
+
+
 
       /* ESERCIZIO 7
        Scrivi una funzione che faccia scomparire la prima lista non ordinata
