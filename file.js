@@ -62,29 +62,56 @@
     */
 
       const addParagraph = function () {
-          const p = document.querySelector("p");
-          let newAddPar = document.createElement("p");}
-
-
+          const fisrtDiv = document.querySelector("div");
+          const newAddPar = document.createElement("p");
+           newAddPar.innerText="Questo è un nuovo paragrafo aggiunto al primo div";
+           fisrtDiv.appendChild(newAddPar)
+        }
+        addParagraph();
+ 
 
 
       /* ESERCIZIO 7
        Scrivi una funzione che faccia scomparire la prima lista non ordinata
     */
 
-      const hideFirstUl = function () {}
+      const hideFirstUl = function () {
+     const firstUl = document.querySelector("ul");
+     firstList.onclick = function() {
+       firstList.remove();
+     }
+    }
+     hideFirstUl();
+
+
+
 
       /* ESERCIZIO 8 
        Scrivi una funzione che renda verde il background di ogni lista non ordinata
       */
 
-      const paintItGreen = function () {}
+     /* const paintItGreen = function () {
+      const lists = document.querySelectorAll("ul");
+       lists.forEach(list => { 
+        lists.style.backgroundcolor="green";
+       })
+       }
+       paintItGreen(); */
+
+
+
 
       /* ESERCIZIO 9
        Scrivi una funzione che rimuova l'ultima lettera dall'h1 ogni volta che l'utente lo clicca
       */
 
-      const makeItClickable = function () {}
+      const makeItClickable = function () {
+       let h1 = document.querySelector("h1");
+       h1.addEventListener("click", function() {
+            h1.textContent=h1.textContent.slice(0,-1);
+                        });
+       };
+       makeItClickable()
 
       /* ESERCIZIO 10
        Crea una funzione che, al click sul footer, riveli l'URL del link interno come contenuto di un alert()
@@ -115,4 +142,19 @@
       Crea una funzione che cambi il colore del h2 con id "changeMyColor" con un colore random ad ogni click ricevuto
     */
 
-      const changeColorWithRandom = function () {}
+      function getRandomColor (){
+        const letters = '0123456789ABCDEF';
+        let color = '#';
+        for (let i=0; i<6; i++){
+            color += letters[Math.floor(Math.random()*16)]
+        }
+        return color;
+      }
+
+      document.addEventListener("DOMContentLoaded", function(){
+        const h2 = document.getElementById("Cambia colore");
+        h2.addEventListener("click", function() {
+            h2.style.color = getRandomColor();
+        })
+      });
+      getRandomColor()
